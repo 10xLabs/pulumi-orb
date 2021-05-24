@@ -1,3 +1,3 @@
-cd "$WORKING_DIRECTORY"
+cd "$WORKING_DIRECTORY" || exit
 npm install -g npm@latest
 npm install
