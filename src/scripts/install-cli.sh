@@ -6,5 +6,5 @@ fi
 
 echo "export PATH=${HOME}/.pulumi/bin:$PATH" >> "$BASH_ENV"
 
-# shellcheck source=~/.bashrc
+# shellcheck source=/dev/null
 source "$BASH_ENV"
