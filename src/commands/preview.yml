@@ -1,0 +1,17 @@
+description: >
+  This command preview Pulumi infrastructure changes
+parameters:
+  stack-name:
+    type: string
+    description: "Pulumi stack name to preview changes"
+  working-directory:
+    type: string
+    default: pulumi
+    description: "The relative working directory to use, i.e. where your Pulumi.yaml is located."
+steps:
+  - run:
+      environment:
+        STACK_NAME: <<parameters.stack-name>>
+        WORKING_DIRECTORY: <<parameters.working-directory>>
+      name: Preview infrastructure changes
+      command: <<include(scripts/preview.sh)>>

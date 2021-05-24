@@ -1,0 +1,24 @@
+description: >
+  Update the infrastructure with Pulumi changes
+
+executor: default
+
+parameters:
+  version:
+    type: string
+    default: latest
+    description: "Version of Pulumi CLI"
+  stack-name:
+    type: string
+    description: "Pulumi stack name to preview changes"
+  working-directory:
+    type: string
+    default: pulumi
+    description: "The relative working directory to use, i.e. where your Pulumi.yaml is located."
+steps:
+  - install:
+      version: << parameters.version >>
+      working-directory: << parameters.working-directory >>
+  - update:
+      stack-name: << parameters.stack-name >>
+      working-directory: << parameters.working-directory >>

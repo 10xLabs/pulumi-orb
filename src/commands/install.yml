@@ -1,0 +1,22 @@
+description: >
+  This command install Pulumi CLI
+parameters:
+  version:
+    type: string
+    default: latest
+    description: "Version of Pulumi CLI"
+  working-directory:
+    type: string
+    default: pulumi
+    description: "The relative working directory to use, i.e. where your Pulumi.yaml is located."
+steps:
+  - run:
+      environment:
+        VERSION: <<parameters.version>>
+      name: Install Pulumi CLI
+      command: <<include(scripts/install-cli.sh)>>
+  - run:
+      environment:
+        WORKING_DIRECTORY: <<parameters.working-directory>>
+      name: Install Node dependencies
+      command: <<include(scripts/install-node-dependencies.sh)>>

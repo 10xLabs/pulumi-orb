@@ -1,0 +1,17 @@
+description: >
+  This command update the infrastructure with Pulumi changes
+parameters:
+  stack-name:
+    type: string
+    description: "Pulumi stack name to update"
+  working-directory:
+    type: string
+    default: pulumi
+    description: "The relative working directory to use, i.e. where your Pulumi.yaml is located."
+steps:
+  - run:
+      environment:
+        STACK_NAME: <<parameters.stack-name>>
+        WORKING_DIRECTORY: <<parameters.working-directory>>
+      name: Update the infrastructure with Pulumi changes
+      command: <<include(scripts/update.sh)>>
