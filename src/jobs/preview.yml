@@ -16,6 +16,9 @@ parameters:
     default: pulumi
     description: "The relative working directory to use, i.e. where your Pulumi.yaml is located."
 steps:
+  - checkout
+  - attach_workspace:
+      at: .
   - install:
       version: << parameters.version >>
       working-directory: << parameters.working-directory >>
