@@ -11,7 +11,7 @@ parameters:
 steps:
   - run:
       environment:
-        STACK_NAME: <<parameters.stack-name>>
-        WORKING_DIRECTORY: <<parameters.working-directory>>
+        STACK_NAME: << parameters.stack-name >>
+        WORKING_DIRECTORY: << parameters.working-directory >>
       name: Update the infrastructure with Pulumi changes
-      command: <<include(scripts/update.sh)>>
+      command: << include(scripts/update.sh) >>

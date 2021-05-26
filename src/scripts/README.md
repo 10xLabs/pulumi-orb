@@ -20,9 +20,9 @@ parameters:
 steps:
   - run:
       environment:
-        PARAM_TO: <<parameters.to>
-      name: Hello <<parameters.to>
-      command: <<include(scripts/greet.sh)>>
+        PARAM_TO: << parameters.to >>
+      name: Hello << parameters.to >>
+      command: << include(scripts/greet.sh) >>
 
 ```
 

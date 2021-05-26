@@ -13,7 +13,7 @@ View the included _[hello.yml](./hello.yml)_ example.
 description: >
   This is a sample executor using Docker and Node.
 docker:
-  - image: 'cimg/node:<<parameters.tag>>'
+  - image: 'cimg/node:<< parameters.tag >>'
 parameters:
   tag:
     default: lts
