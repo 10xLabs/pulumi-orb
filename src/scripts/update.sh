@@ -1,1 +1,1 @@
-pulumi update --stack "$STACK_NAME" --cwd "$WORKING_DIRECTORY"
+pulumi update --stack "$STACK_NAME" --cwd "$WORKING_DIRECTORY" --yes
