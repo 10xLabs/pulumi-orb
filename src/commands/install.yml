@@ -7,7 +7,7 @@ parameters:
     description: "Version of Pulumi CLI"
   working-directory:
     type: string
-    default: pulumi
+    default: deploy
     description: "The relative working directory to use, i.e. where your Pulumi.yaml is located."
 steps:
   - run:
