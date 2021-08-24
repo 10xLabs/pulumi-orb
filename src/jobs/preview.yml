@@ -15,6 +15,10 @@ parameters:
     type: string
     default: pulumi
     description: "The relative working directory to use, i.e. where your Pulumi.yaml is located."
+  setup-remote-docker:
+    type: boolean
+    default: false
+    description: "Indicates when to create a remote and fully-isolated environment to execute Docker commands."
 steps:
   - checkout
   - attach_workspace:
@@ -22,6 +26,13 @@ steps:
   - install:
       version: << parameters.version >>
       working-directory: << parameters.working-directory >>
+  - when:
+      condition:
+        equal: [ true, << parameters.setup-remote-docker >> ]
+      steps:
+        - setup_remote_docker:
+            version: 19.03.13
+            docker_layer_caching: true
   - preview:
       stack-name: << parameters.stack-name >>
       working-directory: << parameters.working-directory >>
