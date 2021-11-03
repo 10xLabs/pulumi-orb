@@ -13,10 +13,6 @@ steps:
   - run:
       environment:
         VERSION: << parameters.version >>
+        WORKING_DIRECTORY: << parameters.working-directory >>
       name: Install Pulumi CLI
       command: << include(scripts/install-cli.sh) >>
-  - run:
-      environment:
-        WORKING_DIRECTORY: << parameters.working-directory >>
-      name: Install Node dependencies
-      command: << include(scripts/install-node-dependencies.sh) >>
