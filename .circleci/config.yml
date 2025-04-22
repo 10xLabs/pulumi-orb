@@ -14,6 +14,7 @@ workflows:
       - orb-tools/lint:
           filters: *filters
       - orb-tools/pack:
+          context: orb-publishing
           filters: *filters
       - shellcheck/check:
           filters: *filters
